@@ -11,6 +11,8 @@ public class Hotel {
         rooms.add(new Room(201, 2));
         rooms.add(new Room(202, 2));
         rooms.add(new Room(301, 3));
+        
+        int[] hotelRating = new int[rooms.size()];
 
         
         HashSet<Integer> floors = new HashSet<>();
@@ -71,15 +73,21 @@ public class Hotel {
         if (selectedRoom != null && selectedRoom.isReserved()) {
             selectedRoom.checkOut();
             reservations.remove(roomNumber);
+            
+            System.out.print("Please rate your stay (1 to 10): ");
+            int rating = input.nextInt();
+            
+            if (rating >= 1 && rating <= 10) {
+                int roomRating = rooms.indexOf(selectedRoom); //using IndexOf to locate room and get rating in the hotelRating array
+                hotelRating[roomRating] = rating;
+                System.out.println("Thank you for your feedback! You rated your experience: " + rating + "/10");
+            } else {
+                System.out.println("Invalid rating. Please rate between 1 and 10.");
+            }
         } else if (selectedRoom != null) {
             System.out.println("Room is not reserved.");
         } else {
             System.out.println("Invalid room number.");
         }
-
-        System.out.println("Current Reservations: " + reservations);
-        System.out.println("Thank you for using the Hotel Reservation System!");
     }
 }
-
-
