@@ -88,6 +88,11 @@ public class Hotel {
             System.out.println("Room is not reserved.");
         } else {
             System.out.println("Invalid room number.");
+            
         }
+        
+        System.out.println("Current Reservations: " + reservations);
+        System.out.println("Thank you for using the Hotel Reservation System!");
     }
+   
 }
