@@ -1,5 +1,13 @@
 # Hotel
 
+
+This hotel check-in system allow guests to pick a room and reserve it by providing their anme and selecting room number.
+If the room is available, it is reserved and price is displayed. The system make sure it does not book the same room twice or multiple times.
+After check in, guests can checkout and rate their stay at the end of the prompt.
+
+
+
+
 /* Your application should use all four of the collections data types we covered: • Arrays, ArrayLists, HashMaps, HashSets
 
 */
