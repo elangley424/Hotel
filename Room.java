@@ -2,17 +2,18 @@ public class Room extends Accommodation {
     private int floor;
     private int price;
 
+    private int[] floorPrices = {200, 300, 400};
+
     public Room(int roomNumber, int floor) {
         super(roomNumber);
         this.floor = floor;
 
-        // Set price based on floor
-        if (floor == 1) {
-            this.price = 200;
-        } else if (floor == 2) {
-            this.price = 300;
-        } else if (floor == 3) {
-            this.price = 400;
+        
+        if (floor >= 1 && floor <= floorPrices.length) {
+            this.price = floorPrices[floor - 1];
+        } 
+        else {
+            this.price = 0;
         }
     }
 
