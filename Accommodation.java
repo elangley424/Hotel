@@ -2,7 +2,6 @@ public class Accommodation {
     private int roomNumber;
     private boolean isReserved;
     private String reservedBy;
-    private String reservationEndDate;
 
     public Accommodation(int roomNumber) {
         this.roomNumber = roomNumber;
@@ -17,14 +16,14 @@ public class Accommodation {
         return isReserved;
     }
 
-    public void reserve(String guestName, String endDate) {
+    public void reserve(String guestName) {
         if (!isReserved) {
             isReserved = true;
             reservedBy = guestName;
-            reservationEndDate = endDate;
-            System.out.println("Room " + roomNumber + " reserved by " + guestName + ". Reservation ends on " + endDate);
-        } else {
-            System.out.println("Room " + roomNumber + " is already reserved by " + reservedBy + ". Available after " + reservationEndDate);
+            System.out.println("Room " + roomNumber + " reserved by " + guestName);
+        }
+        else{
+            System.out.println("Room " + roomNumber + " is already reserved by " + reservedBy );
         }
     }
 
@@ -33,8 +32,9 @@ public class Accommodation {
             System.out.println("Room " + roomNumber + " checked out by " + reservedBy + ".");
             isReserved = false;
             reservedBy = null;
-            reservationEndDate = null;
-        } else {
+            
+        }
+        else {
             System.out.println("Room " + roomNumber + " is not reserved.");
         }
     }
@@ -42,8 +42,9 @@ public class Accommodation {
     public void printInfo() {
         System.out.println("Room Number: " + roomNumber);
         if (isReserved) {
-            System.out.println("Reserved by: " + reservedBy + ", Reservation ends on: " + reservationEndDate);
-        } else {
+            System.out.println("Reserved by: " + reservedBy );
+        } 
+        else {
             System.out.println("Room is available.");
         }
     }
